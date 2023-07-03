@@ -4,7 +4,11 @@ from random_m import random_move
 
 # Choose what you want and simply uncomment the right function 
 
-figures()
+
+
+#figures()
+
 
 #random_move()
+
 
