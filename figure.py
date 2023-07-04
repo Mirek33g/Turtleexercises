@@ -1,10 +1,20 @@
-import turtle as t 
-import random 
+import turtle as t
+import random
+
+
+def random_color():
+  r = random.randint(0, 255)
+  g = random.randint(0, 255)
+  b = random.randint(0, 255)
+  colors = (r, g, b)
+  return colors
+
 
 def figures():
   tim = t.Turtle()
+  tim.speed(1)
+  t.colormode(255)
   b = 3
-  colors = ["red", "blue", "green", "purple", "orange", "yellow", "black"]
 
   def draw(a):
     for i in range(a):
@@ -12,6 +22,6 @@ def figures():
       tim.right(360 / a)
 
   for i in range(b, 12):
-    tim.color(random.choice(colors))
+    tim.color(random_color())
     draw(b)
     b += 1
