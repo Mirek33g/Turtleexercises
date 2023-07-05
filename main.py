@@ -2,7 +2,8 @@ from figure import figures
 from random_m import random_move 
 from random_dot import dots 
 from spiro import spirograph 
-from drawing import draw
+from drawing import draw 
+from racing import race
 
 # Choose what you want and simply uncomment the right function
 
@@ -14,4 +15,6 @@ from drawing import draw
 
 #dots()
 
-#draw()
+#draw() 
+
+race()
