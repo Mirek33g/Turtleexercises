@@ -9,4 +9,6 @@ from spiro import spirograph
 
 #random_move()
 
-#spirograph()
+#spirograph() 
+
+#dots()
