@@ -1,48 +1,37 @@
 from turtle import Turtle, Screen
-import random 
-
-
+import random
 
 
 def race():
-  
-  screen = Screen() 
-  screen.setup(width= 800, height= 550) 
-  #user_bet = screen.textinput(title= "Make your bet", prompt= "Which turte will win the race? Type a color: ")
- # print(user_bet)
+  is_race_on = False
 
+  screen = Screen()
+  screen.setup(width=600, height=400)
+  user_bet = screen.textinput(title= "Make your bet", prompt= "Which turte will win the race? Type a color: ")
+  print(user_bet)
+  colors = ["yellow", "green", "red", "purple", "blue", "black"]
+  position = [-125, -75, -25, 25, 75, 125]
+  all_turtles = []
 
+  for i in range(0, 6):
+    new_turtle = Turtle("turtle")
+    new_turtle.penup()
+    new_turtle.color(colors[i])
+    new_turtle.goto(-580, position[i])
+    all_turtles.append(new_turtle)
 
-  pac = Turtle("turtle")
-  pac.penup()
-  pac.color("yellow")
-  pac.goto(-380, 150)
+  if user_bet:
+    is_race_on = True
 
-  pic = Turtle("turtle")
-  pic.penup()
-  pic.color("green")
-  pic.goto(-380, 75)
-  
-  tim = Turtle("turtle")
-  tim.penup()
-  tim.color("red")
-  tim.goto(-380, 0) 
+  while is_race_on:
+    for t in all_turtles:
+      if t.xcor() > 595:
+        is_race_on = False
+        winner = t.pencolor()
+        if winner == user_bet:
+          print(f"You have won! The {winner} turtle is the winner")
+        else:
+          print(f"Youe have lost. The {winner} turtle is the winner")
 
-  tom = Turtle("turtle")
-  tom.penup() 
-  tom.color("blue")
-  tom.goto(-380, -75)
-
-  ben = Turtle("turtle")
-  ben.penup()
-  ben.color("purple")
-  ben.goto(-380, -150)
-
-
-
-
-
-
-
-
-
+      distance = random.randint(0, 10)
+      t.forward(distance)
