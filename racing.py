@@ -4,10 +4,11 @@ import random
 
 def race():
   is_race_on = False
+  user_bet = "red"
 
   screen = Screen()
   screen.setup(width=600, height=400)
-  user_bet = screen.textinput(title= "Make your bet", prompt= "Which turte will win the race? Type a color: ")
+  # user_bet = screen.textinput(title= "Make your bet", prompt= "Which turte will win the race? Type a color: ")
   print(user_bet)
   colors = ["yellow", "green", "red", "purple", "blue", "black"]
   position = [-125, -75, -25, 25, 75, 125]
@@ -25,7 +26,7 @@ def race():
 
   while is_race_on:
     for t in all_turtles:
-      if t.xcor() > 595:
+      if t.xcor() > 580:
         is_race_on = False
         winner = t.pencolor()
         if winner == user_bet:
