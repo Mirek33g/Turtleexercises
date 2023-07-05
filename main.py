@@ -17,4 +17,4 @@ from racing import race
 
 #draw() 
 
-race()
+#race()
